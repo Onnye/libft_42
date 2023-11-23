@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 11:02:01 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/17 14:44:33 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/11/23 10:48:54 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stddef.h>
+# include <unistd.h>
 
 /*
 ** Partie 1 - Fonctions de la libc
