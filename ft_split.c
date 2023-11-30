@@ -1,95 +1,82 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/25 17:33:41 by ltufo             #+#    #+#             */
+/*   Updated: 2023/11/30 16:19:46 by ltufo            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	count_words(char const *s, char c)
 {
 	int	count;
-	int	i;
 
 	count = 0;
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] == c)
-			i++;
+		while (*s == c)
+			s++;
 		if (*s)
 			count++;
-		while (s[i] && s[i] != c)
-			i++;
+		while (*s && *s != c)
+			s++;
 	}
 	return (count);
 }
 
-static char *get_next_word(char const **str, char delimiter)
+static char	*strdup_range(char const *start, char const *end)
 {
-    const char *word_start = *str;
-    const char *word_end = *str;
+	char	*str;
+	int		len;
+	int		i;
 
-    // Avancer jusqu'au début du prochain mot
-    while (*word_start == delimiter)
-        word_start++;
-
-    // Trouver la fin du mot
-    while (*word_end && *word_end != delimiter)
-        word_end++;
-
-    // Allouer de la mémoire pour le mot
-    char *word = (char *)malloc(word_end - word_start + 1);
-    if (!word)
-        return NULL;
-
-    // Copier le mot dans la nouvelle allocation
-    int i = 0;
-    while (word_start < word_end)
-        word[i++] = *(word_start++);
-
-    // Ajouter le caractère de fin de chaîne
-    word[i] = '\0';
-
-    // Mettre à jour la position du pointeur dans la chaîne
-    *str = word_end;
-
-    return word;
+	len = end - start;
+	str = (char *)malloc(len + 1);
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (start < end)
+	{
+		str[i] = *start;
+		i++;
+		start++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 
-char **ft_split(char const *str, char delimiter)
+char	**ft_split(char const *s, char c)
 {
-    char **result;
-    int word_count;
-    int i;
+	int	word_count;
+	char		**result;
+	int	i;
+	const char	*start;
 
-    // Vérifier si la chaîne est NULL
-    if (!str)
-        return NULL;
-
-    // Compter le nombre de mots dans la chaîne
-    word_count = count_words(str, delimiter);
-
-    // Allouer de la mémoire pour le tableau de mots
-    result = (char **)malloc((word_count + 1) * sizeof(char *));
-    if (!result)
-        return NULL;
-
-    i = 0;
-    // Remplir le tableau de mots en utilisant la fonction get_next_word
-    while (i < word_count)
-    {
-        result[i] = get_next_word(&str, delimiter);
-        if (!result[i])
-        {
-            // Libérer la mémoire si l'allocation échoue
-            while (i >= 0)
-	    {	--i;
-                free(result[i]);
-	    }
-            free(result)
-            return NULL;
-        }
-        i++;
-    }
-
-    // Terminer le tableau avec NULL
-    result[i] = NULL;
-
-    return result;
+	if (!s)
+		return (NULL);
+	word_count = count_words(s, c);
+	result = (char **)malloc((word_count + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (*s)
+	{
+		while (*s == c)
+			s++;
+		if (*s)
+		{
+			start = s;
+			while (*s && *s != c)
+				s++;
+			result[i] = strdup_range(start, s);
+			i++;
+		}
+	}
+	result[i] = NULL;
+	return (result);
 }
-
