@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:33:41 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/30 16:19:46 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/03 13:48:30 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,11 @@ static char	*strdup_range(char const *start, char const *end)
 	return (str);
 }
 
-char	**ft_split(char const *s, char c)
+static void	fill_result(char **result, const char *s, char c)
 {
-	int	word_count;
-	char		**result;
-	int	i;
+	int			i;
 	const char	*start;
 
-	if (!s)
-		return (NULL);
-	word_count = count_words(s, c);
-	result = (char **)malloc((word_count + 1) * sizeof(char *));
-	if (!result)
-		return (NULL);
 	i = 0;
 	while (*s)
 	{
@@ -74,9 +66,23 @@ char	**ft_split(char const *s, char c)
 			while (*s && *s != c)
 				s++;
 			result[i] = strdup_range(start, s);
-			i++;
+				i++;
 		}
 	}
 	result[i] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		word_count;
+	char	**result;
+
+	if (!s)
+		return (NULL);
+	word_count = count_words(s, c);
+	result = (char **)malloc((word_count + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	fill_result(result, s, c);
 	return (result);
 }
