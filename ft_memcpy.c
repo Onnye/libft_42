@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 14:06:15 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/20 13:53:07 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/07 12:31:19 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
+	char		*destination;
+	const char	*source;
+	size_t		i;
 
-	d = (char *)dest;
-	s = (const char *)src;
+	destination = (char *)dest;
+	source = (const char *)src;
 	if (!dest && !src)
 		return (NULL);
-	while (n-- > 0)
+	i = 0;
+	while (i < n)
 	{
-		*d++ = *s++;
+		destination[i] = source[i];
+		i++;
 	}
 	return (dest);
 }

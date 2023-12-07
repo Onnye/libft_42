@@ -22,12 +22,6 @@ CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-#A SUPPRIMER###########
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_BONUS)
-#######################
-
 $(NAME):$(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
