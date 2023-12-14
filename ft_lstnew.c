@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 13:30:42 by ltufo             #+#    #+#             */
-/*   Updated: 2023/12/03 15:02:12 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/14 14:25:52 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,16 @@ t_list	*ft_lstnew(void *content)
 	new_node->next = NULL;
 	return (new_node);
 }
+
+/*
+int main(void)
+{
+    t_list *new_node = ft_lstnew("Hello, World!");
+
+    ft_putstr_fd((char *)new_node->content, 1);
+    ft_putchar_fd('\n', 1);
+    free(new_node);
+
+    return (0);
+}
+*/

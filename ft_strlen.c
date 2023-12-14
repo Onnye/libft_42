@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:47:18 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/13 12:40:29 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/14 13:04:43 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,16 @@ size_t	ft_strlen(const char *s)
 	}
 	return (counter);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+    const char *test_str = "Hello, World!";
+    size_t result = ft_strlen(test_str);
+
+    printf("ft_strlen(\"%s\") = %zu\n", test_str, result);
+    return (0);
+}
+*/

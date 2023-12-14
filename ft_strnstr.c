@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:05:10 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/20 18:46:04 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/14 14:17:32 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,23 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+    const char *test_big = "Hello, World!";
+    const char *test_little = "World";
+    size_t test_len = 13;
+    char *result = ft_strnstr(test_big, test_little, test_len);
+
+    if (result != NULL)
+        printf("ft_strnstr(\"%s\", \"%s\", %zu) 
+	= \"%s\"\n", test_big, test_little, test_len, result);
+    else
+        printf("ft_strnstr(\"%s\", \"%s\", %zu) 
+	= NULL\n", test_big, test_little, test_len);
+    return (0);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:02:49 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/29 15:58:39 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/14 13:47:19 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,14 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_putchar_fd((n % 10) + '0', fd);
 }
+
+/*
+int main(void)
+{
+    int test_number = -2147483648;
+
+    ft_putnbr_fd(test_number, 1);
+    ft_putchar_fd('\n', 1);
+    return (0);
+}
+*/

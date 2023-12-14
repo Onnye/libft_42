@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 10:05:18 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/20 17:40:30 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/14 13:22:02 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,18 @@ char	*ft_strdup(const char *s1)
 	str[i] = 0;
 	return (str);
 }
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    const char *test_str = "Hello, World!";
+    char *result = ft_strdup(test_str);
+
+    printf("ft_strdup(\"%s\") = \"%s\"\n", test_str, result);
+    free(result);
+    return (0);
+}
+*/

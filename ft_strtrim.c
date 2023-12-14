@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 13:16:56 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/25 17:28:46 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/14 11:27:58 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed[end - start] = '\0';
 	return (trimmed);
 }
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    const char *test_str = "   Hello, World!   ";
+    const char *set = " ";
+    char *result = ft_strtrim(test_str, set);
+
+    printf("ft_strtrim(\"%s\", \"%s\") = \"%s\"\n", test_str, set, result);
+    free(result);
+    return (0);
+}
+*/

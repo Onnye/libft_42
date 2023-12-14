@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 10:48:37 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/28 18:22:09 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/14 09:45:15 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,26 @@ char	*ft_itoa(int n)
 	fill_str(s, number, len);
 	return (s);
 }
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    int num1 = 123;
+    int num2 = -456;
+    int num3 = 0;
+    char *str1 = ft_itoa(num1);
+    char *str2 = ft_itoa(num2);
+    char *str3 = ft_itoa(num3);
+
+    printf("Nombre : %d, Chaîne : %s\n", num1, str1);
+    printf("Nombre : %d, Chaîne : %s\n", num2, str2);
+    printf("Nombre : %d, Chaîne : %s\n", num3, str3);
+    free(str1);
+    free(str2);
+    free(str3);
+    return (0);
+}
+*/

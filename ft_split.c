@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:33:41 by ltufo             #+#    #+#             */
-/*   Updated: 2023/12/07 16:23:24 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/14 13:27:51 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,3 +86,37 @@ char	**ft_split(char const *s, char c)
 	fill_result(result, s, c);
 	return (result);
 }
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+void print_split_result(char **result)
+{
+    if (result == NULL)
+    {
+        printf("ft_split result: NULL\n");
+        return;
+    }
+
+    printf("ft_split result:\n");
+    for (int i = 0; result[i] != NULL; i++)
+    {
+        printf("  [%d]: \"%s\"\n", i, result[i]);
+    }
+}
+
+int main(void)
+{
+    const char *test_str = "Hello,World! This,is a,test.";
+    char **result = ft_split(test_str, ',');
+
+    print_split_result(result);
+    for (int i = 0; result[i] != NULL; i++)
+    {
+        free(result[i]);
+    }
+    free(result);
+    return (0);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 13:45:31 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/20 15:34:57 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/14 11:32:55 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,22 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
+/*
+#include <stdio.h>
+
+int main(void)
+{
+    const char *test_str = "Hello, World!";
+    int target_char = 'o';
+    char *result = ft_strrchr(test_str, target_char);
+
+    if (result != NULL)
+        printf("ft_strrchr(\"%s\", '%c') 
+	= \"%s\"\n", test_str, (char)target_char, result);
+    else
+        printf("ft_strrchr(\"%s\", '%c') 
+	= NULL\n", test_str, (char)target_char);
+    return (0);
+}
+*/

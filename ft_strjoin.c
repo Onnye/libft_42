@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:20:55 by ltufo             #+#    #+#             */
-/*   Updated: 2023/11/23 13:20:45 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/14 13:14:10 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,20 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(result, s2, total_len + len_s2 + 1);
 	return (result);
 }
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    const char *test_str1 = "Hello, ";
+    const char *test_str2 = "World!";
+    char *result = ft_strjoin(test_str1, test_str2);
+
+    printf("ft_strjoin(\"%s\", \"%s\") 
+	= \"%s\"\n", test_str1, test_str2, result);
+    free(result);
+    return (0);
+}
+*/
