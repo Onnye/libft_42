@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:38:38 by ltufo             #+#    #+#             */
-/*   Updated: 2023/12/14 11:21:44 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/15 11:17:02 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int main(void)
     size_t substring_len = 5;
     char *result = ft_substr(test_str, start_pos, substring_len);
 	
-    printf("ft_substr(\"%s\", %u, %zu) = \"%s\"\n", test_str, start_pos, substring_len, result);
+    printf("ft_substr(\"%s\", %u, %zu) 
+	= \"%s\"\n", test_str, start_pos, substring_len, result);
     free(result);
     return (0);
 }

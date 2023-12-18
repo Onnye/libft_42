@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:33:41 by ltufo             #+#    #+#             */
-/*   Updated: 2023/12/14 13:27:51 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/16 13:36:51 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,14 @@ static void	fill_result(char **result, const char *s, char c)
 			while (*s && *s != c)
 				s++;
 			result[i] = strdup_range(start, s);
-				i++;
+			if (result[i] == NULL)
+			{
+				while (i >= 0)
+					free(result[i--]);
+				free(result);
+				return ;
+			}
+			i++;
 		}
 	}
 	result[i] = NULL;
@@ -84,6 +91,8 @@ char	**ft_split(char const *s, char c)
 	if (!result)
 		return (NULL);
 	fill_result(result, s, c);
+	if (result == NULL)
+		return (NULL);
 	return (result);
 }
 

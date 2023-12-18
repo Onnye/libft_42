@@ -6,7 +6,7 @@
 /*   By: ltufo <ltufo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 13:27:46 by ltufo             #+#    #+#             */
-/*   Updated: 2023/12/14 14:16:57 by ltufo            ###   ########.fr       */
+/*   Updated: 2023/12/15 11:16:50 by ltufo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ int main(void)
     char *result = ft_strchr(test_str, test_char);
 
     if (result != NULL)
-        printf("ft_strchr(\"%s\", '%c') = \"%s\"\n", test_str, test_char, result);
+        printf("ft_strchr(\"%s\", '%c') 
+	= \"%s\"\n", test_str, test_char, result);
     else
-        printf("ft_strchr(\"%s\", '%c') = NULL\n", test_str, test_char);
+        printf("ft_strchr(\"%s\", '%c') 
+	= NULL\n", test_str, test_char);
 
     return (0);
 }
